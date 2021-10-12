@@ -1,0 +1,68 @@
+
+\section{Previous work} \label{s:past}
+
+In the late thirties, the ring structure on cohomology was introduced via a cochain level construction dual to a choice of simplicial chain approximation to the diagonal map.
+This is a natural chain map
+\[
+\Delta_0 \colon \chains(X) \to \chains(X) \otimes \chains(X)
+\]
+for any space $X$, where $\chains(X)$ denotes the singular chains of $X$, which is an isomorphism if $X$ is a point.
+Unlike the diagonal of spaces, this chain map is not symmetric with respect to transpositions of factors in the target.
+Steenrod \cite{steenrod1947products} corrected homotopically the broken symmetry of $\Delta_0$ by effectively constructing maps
+\begin{equation*}
+\Delta_i \colon \chains(X) \to \chains(X) \otimes \chains(X)
+\end{equation*}
+satisfying certain homological conditions.
+These so called \textit{cup-$i$ coproducts}, or their dual \textit{cup-$i$ products}, define mod $2$ cohomology operations, known as \textit{Steenrod squares}, whose importance in stable homotopy theory is hard to overstate.
+
+In \cite{medina2021newformulas}, I gave a new description of cup-$i$ coproducts and use it to provide a much faster algorithm for the computation of Steenrod squares on simplicial complexes.
+This new description of the cup-$i$ products allowed me to axiomatically characterize them in \cite{medina2018axiomatic}; and the associated algorithm permitted me to effectively incorporate the finer information encoded by Steenrod squares into the persistent homology pipeline \cite{medina2018persistence}.
+
+Persistent homology is one of the primary tools in the rapidly developing field of topological data analysis.
+A motivating example for this technique is the study of a finite point cloud of data embedded in Euclidean space.
+From it, a collection of nested simplicial complexes can be produced
+\begin{equation} \label{e:introduction filtered complex}
+X_0 \to X_1 \to \cdots \to X_n
+\end{equation}
+and the homology construction provides a collection of linear maps
+\begin{equation} \label{e:persistence homology intro}
+\begin{tikzcd}[column sep = small]
+H_\bullet(X_0;\Bbbk) \arrow[r] & H_\bullet(X_{1};\Bbbk) \arrow[r] & \cdots \arrow[r] & H_\bullet(X_n;\Bbbk).
+\end{tikzcd}
+\end{equation}
+A summary of the way Betti numbers are shared by consecutive simplicial complexes can be effectively computed from \eqref{e:persistence homology intro}, serving as a principled and robust feature of the data.
+As part of a public-private partnership between \href{https://www.l2f.ch/}{L2F SA}, the \href{https://www.epfl.ch/labs/hessbellwald-lab/}{Laboratory for Topology and Neuroscience} at EPFL, and the \href{https://heig-vd.ch/en/research/reds}{Institute of Reconfigurable \& Embedded Digital Systems} of HEIG-VD we developed \texttt{giotto-tda}, a \texttt{Python} library that integrates high-performance topological data analysis with machine learning via a \emph{scikit-learn}--compatible API and state-of-the-art \texttt{C++} implementations \cite{medina2021giotto}.
+
+Most of the transformative effects of persistence theory have been achieved in the applied context, but not only.
+For example, in \cite{medina2021functional} we used subtle aspects of this theory to correct a theorem of M. Morse in the study of minimal surface.
+
+Steenrod squares at the cochain level. i.e. cup-$i$ structures, are also used in theoretical physics. Authors including D. Gaiotto (\textit{Perimeter}), A. Kapustin (\textit{Caltech}), and R. Thorngren (\textit{Harvard}) have considered triangulations of spacetime with fields represented by cochains, and, in order to express subtle interactions between these fields, used cup-$i$ products in the definition of action functionals.
+Finer structure present on cup-$i$ structures comes from the relations Steenrod squares satisfy.
+Motivated by these applications, with G. Brumfield (\textit{Stanford}) and J. Morgan (\textit{Columbia}) we constructed cochains enforcing the cohomology relations Steenrod squares satisfy using their description in terms of cup-$i$ products.
+In \cite{medina2020cartan}, I constructed cochains enforcing the Cartan formula
+\begin{equation*}
+Sq^k(\alpha \beta) = \sum_{i+j=k} Sq^i(\alpha) Sq^j(\beta),
+\end{equation*}
+which were used by Kapustin--Thorngren in the study of topological phases of matter \cite{kapustin2017fermionic}.
+In \cite{medina2021adem}, we did the same for the Adem relation
+\begin{equation*}
+Sq^i Sq^j(\alpha) = \sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} Sq^{i+j-k} Sq^k(\alpha)
+\end{equation*}
+for all $i,j > 0$ such that $i < 2j$, which play an important role in the definition of secondary cohomology operations and $\kappa$-invariants of Postnikov towers.
+
+The cup-$i$ products are part of a more general structure known as an \textit{$E_\infty$-algebra}, a notion controlled by so called \textit{$E_\infty$-operads}.
+The study of $E_\infty$-structures has a long history, where (co)homology operations, the recognition of infinite loop spaces, and the complete algebraic representation of the $p$-adic homotopy category are key milestones.
+
+No finitely presented $E_\infty$-operad can exist but, as I showed in \cite{medina2020prop1, medina2018prop2}, passing to the context of multiple inputs and outputs allows for the introduction of props whose associated operads are $E_\infty$.
+I related my models in the categories of chains complexes and CW-spaces to $E_\infty$-operads previously defined by McClure--Smith \cite{mcclure2003multivariable}, Berger--Fresse \cite{berger2004combinatorial} and Kaufmann \cite{kaufmann2009dimension}, and used these comparisons to establish a conjecture of his.
+
+Given its small number of generators and relations, my model of the $E_\infty$-operad is well suited to define $E_{\infty}$-structures.
+In \cite{medina2020prop1}, I defined an $E_\infty$-algebra structure on simplicial cochains extending the Alexander--Whitney product and, with R.~Kaufmann (\textit{Purdue}), one on cubical cochains extending the Cartan product \cite{medina2021cubical}.
+Showing, additionally, that the Cartan--Serre comparison map from simplicial to cubical singular chains of spaces is a quasi-isomorphism of $E_\infty$-algebras.
+Following a suggestion by P.~May (\textit{Chicago}), with A.~Pizzi (\textit{Torino}) and P.~Salvatore (\textit{Rome}), we define in upcoming work an $E_\infty$-structure on multisimplicial cochains \cite{medina2021multisimplicial}.
+
+The definition of Steenrod operations for odd primes was given in non-constructive terms through the homology of symmetric groups.
+In \cite{medina2020maysteenrod}, using the operadic viewpoint of May, we generalized Steenrod's cup-$i$ products to cup-$(p,i)$ products on a general class of $E_\infty$-algebras, in particular defining constructively all Steenrod operations for simplicial and cubical sets.
+
+To study these structures concretely, I wrote the specialized computer algebra system \texttt{ComCH} \cite{medina2021computer}.
+To date, this \texttt{Python} project models the Barratt-Eccles and surjection operads \cite{mcclure2003multivariable,berger2004combinatorial}, and implements Steenrod cup-$(p,i)$ products for simplicial and cubical sets.

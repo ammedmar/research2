@@ -1,0 +1,44 @@
+
+\section{Applications} \label{s:applications}
+
+\subsection{Topology and deep learning}
+
+Building on the work by \texttt{giotto-tda}'s team the following research direction will be pursued.
+It already counts with a public-private Innosuisse grant approved for over 1 Million USD, whose mathematical content I wrote as part of Kathryn Hess' lab at EPFL.
+
+Topology can complement traditional approaches to machine learning and data analysis by providing global summaries of complex relational structures.
+The added information is model independent and highly resistant to noise.
+Designing reliable AI systems is a multi-faceted challenge and topology can be used to tackle the following core aspects of the problem:
+\begin{itemize}
+	\item \underline{Robustness to noise and adversarial attacks}: deep learning models are surprisingly susceptible to small perturbations, and this can lead to unexpected failures in deployed systems.
+	\item \underline{Generalizability to unseen data}: large models can overfit the data they are trained on and thus fail to generalize to data in deployment.
+\end{itemize}
+Traditional regularizers, one of the primary tools used to tackle the above challenges, impose penalties on representations that exhibit undesirable properties such as exploding gradients or highly complicated geometric structures.
+By studying the topology of the weight space and decision boundaries of trained models, we will validate on real world data the assumption that robustness is linked to less cumbersome topologies.
+This will enable to create performant topological regularizers that improve the resilience and generalization power of new models.
+
+The tools used for the study of these spaces of weights and decisions boundaries are based on persistent homology and the enhancements provided by persistent Steenrod operations and future persistent Massey-type products.
+
+\subsection{Motion planning and Dyer-Lashof operations}
+
+The spaces $C(r,n)$ of configurations of $r$ distinct labeled points in $\mathbb R^n$ are objects of central topological interest related to loop spaces, knots, and deformation theory.
+Recently, they have also found applications in motion planning and robotics through the concept of topological complexity \cite{farber2003motion-planning}.
+
+These spaces are also intimately connected with the study of commutativity up to coherent homotopies.
+For example, taking the limit as $n \to \infty$, the space $C(r, \infty)/\S_r$ is a model for the classifying space of the symmetric group $\S_r$, whose homology is responsible for Steenrod operations on the homology of algebras equipped with an $E_\infty$-structure.
+An $E_n$-structure on an algebra is controlled by operads whose arity $r$ part is homotopy equivalent to $C(r,n)$.
+
+We will use the models of such operads implemented in my computer algebra system \texttt{ComCH} \cite{medina2021computer} to concretely study these algebras.
+In particular, we expect to identify products in $E_n$-algebras responsible for Dyer--Lashof--Cohen operations.
+This will allow us to effectively improve on the existing methods bounding the topological complexity of concrete configuration spaces.
+
+\subsection{Topological lattice field theory} \label{ss:physics}
+
+I organize a seminar at the Max Planck Institute for Mathematics exploring the connections between combinatorial topology and topological quantum field theory, and I expect this work to continue in Barcelona.
+Given that Steenrod cup-$i$ products and the homological relations they satisfy feature centrally on several physical theories \cite{gaiotto2016spin, kapustin2017fermionic}, we expect to use the newly introduced cup-$(p,i)$ products and future relations between them in the construction of new theories.
+
+In some more detail, we are interested in gauge field theories defined on discretized manifolds with values on some $\infty$-group $\mathbb G$.
+An $\infty$-group can be thought of as the Postnikov tower of some homology theory, and the fields of the theory being considered, as cochains with values on that homology.
+The work ahead is to expand the collection of homology theories that are currently expressible in terms of cochain approximations through their Postnikov towers, as well as the set of (topologically invariant) action functionals that can be consider over them.
+Concretely, we expect to improve the approximation of Spin bordism from 4 to 5 dimensions, and eventually to all of them, which will have an impact on the classification and study of fermionic phases of matter as their lower dimensional versions already have.
+

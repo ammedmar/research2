@@ -1,0 +1,36 @@
+
+\section{Introduction} \label{s:introduction}
+
+There is a tense trade-off in algebraic topology having roots reaching back to the beginning of its modern form.
+This tension can be illustrated with the concept of cohomology.
+The first approaches, dating back to Poincar\'e, are based on the subdivision of a space into simple contractible pieces.
+These elementary shapes are made to generate a free graded module and their spatial relations define the differential used to compute cohomology.
+This definition makes certain geometric properties of cohomology, for example excision, fairly clear.
+Yet, it is not easy to show that a continuous map of spaces induces a map between their associated cohomologies.
+The functoriality just alluded to is trivial when defining cohomology in terms of homotopy classes of maps to Eilenberg--MacLane spaces, but this passage to the homotopy category forgets much geometric information and it is not easy to manipulate concretely.
+The tension this example illustrates manifests itself in many other important contexts, and the trade-off between concreteness and functoriality remains as central today as it was almost a century ago.
+
+A unifying goal of my research is to ease this tension by developing concrete constructions of concepts defined only abstractly or axiomatically, allowing for the application of some of the central ideas of algebraic topology in novel contexts, notably in applied mathematics and lattice field theory.
+A concept I have explored from this viewpoint extensively and for which I have provided applications in category theory, manifold topology, and data analysis is commutativity up to coherent homotopies, a notion I now motivate.
+
+A principal goal of algebraic topology, if not its \emph{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the study of topological properties quantitatively.
+I will focus on spaces up to weak homotopy equivalence, where a first example of an algebraization procedure is provided by the functor of simplicial or cubical cochains.
+This construction may be thought of as a linearization of spaces and, as expected, losses much structure.
+For example, the cohomology groups of $\mathbb{C} P^2$ and $S^2 \vee S^4$, the union of a $2$- and a $4$-sphere over a point, are isomorphic despite these spaces not being equivalent.
+More information can be encoded on the quasi-isomorphism type of the cochain complex of a space if equipped with a natural product structure.
+This makes its cohomology into a natural commutative ring.
+In our example, $\mathbb{C} P^2$ and $S^2 \vee S^4$ are indeed distinguished by their cohomology rings.
+However, this invariant has noticeable limitations.
+To see this consider the suspension construction $\Sigma$ illustrated in the case of a circle by:
+\begin{center}
+	\includegraphics[scale=.2]{aux/suspension.pdf}
+\end{center}
+The cohomology ring of the spaces $\Sigma(\mathbb{C} P^2)$ and $\Sigma(S^2 \vee S^4)$ are isomorphic, so further structure is required on cohomology to distinguish them.
+This is provided by Steenrod operations in the mod $p$ cohomology of spaces, which together with the bockstein homomorphism provide a complete description of the mod $p$ cohomology functor.
+To define said operations, one constructs a coherent family of homotopies correcting the broken commutativity of the cochain level product.
+The existence of such ``derived commutativity'' structure can be argued indirectly, but this provides no concrete method for computation of the associated invariants, and misses the rich geometric and combinatorial structure that an effective construction provides.
+
+\subsection*{Outline}
+
+I will overview in \cref{s:past} the significance of these homotopy coherent structures and my contributions to theoretical and computational aspects of their study.
+I will devote \cref{s:future} to explaining research directions I will finalize in the near future, and \cref{s:applications} to presenting possible applications stemming from this body of work in machine learning, motion planning and lattice field theory.

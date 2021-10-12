@@ -1,0 +1,41 @@
+
+\section{Future work} \label{s:future}
+
+\subsection{Steenrod operations and Khovanov homology}
+
+As mentioned before, at odd primes Steenrod operations, originally defined nonconstructively, were given a cochain level description in \cite{medina2020maysteenrod}.
+With F. Cantero-Mor\'{a}n (\textit{UAM}) we will work on developing a description of Steenrod operations at the simplicial cochain level that is dual to this one.
+This work constitutes a generalization of the description of cup-$i$ products introduced in \cite{medina2021newformulas} which lead to advances in applied topology discussed in the previous section.
+With these new formulas we will develop algorithms for the fast computation of Steenrod operations suitable for their incorporation into persistent homology.
+
+Another area impacted by this work is the study of knots and links.
+A wide range of invariants have been developed to distinguish knots and links with deep connections to physics and other areas of mathematics.
+For example, V. Jones and E. Witten were awarded the Fields Medal in 1990 in part for their study of the Jones polynomial, an invariant whose ``categorification'' is known as Khovanov homology.
+
+The dual description of cup-$i$ products introduced in \cite{medina2021newformulas} allowed Cantero-Mor\'{a}n to increase the discriminatory power of this invariant by defining Steenrod squares on mod 2 Khovanov homology \cite{cantero-moran2020khovanov}.
+We will work on implementing these formulas into high-performance routines that could be used to distinguish knots in practice.
+Additionally, our work dualizing the formulas for Steenrod cup-$(p,i)$ products will allow us to define Steenrod operations on mod $p$ Khovanov homology, as well as implementing effective methods for their computation.
+
+This project will involved several graduate students and other young researcher, for which some financial support has already been secured.
+
+\subsection{Secondary operations and Postnikov towers}
+
+Steenrod operations can be understood as structure on cohomology that arises from lifting to the cochain level the commutativity relation satisfied by the cup product.
+This is part of a broader conceptual pattern where secondary homological structure can be derived from relations bounding primary structure.
+Steenrod operations, which we now regard as primary cohomological structure, satisfy Cartan and Adem relations.
+With G. Brumfiel (\textit{Stanford}) and J.~Morgan (\textit{Columbia}) we produced cochains enforcing these relations in the case $p=2$, and will extend this work to all primes.
+This will allow us to provide cochain models approximating spaces presented by certain Postnikov towers, as they have done for the Spin bordism spectrum.
+Work motivated by the study of lattice field theories as surveyed in \cref{ss:physics}.
+
+\subsection{Rational homotopy theory}
+
+So far we have focused on the prime $p$ part of the homotopy theory of spaces.
+There is also a rich theory started by D. Quillen and D. Sullivan, my former Ph.D. advisor, modeling algebraically the rational part.
+One of the formulations of this algebraization is provided by $C_\infty$-coalgebras.
+These are special kind of $E_\infty$-coalgebras where the cocommutativity holds strictly while coassociativity remains relaxed up to coherent homotopies.
+I will construct a map from the $C_\infty$-operad controlling this structures to my model of the $E_\infty$-operad \cite{medina2020prop1} considered over the rationals.
+Since, due to its finite presentation, my model can be used to describe very explicitly $E_\infty$-structures, we will use it to advance effective computational techniques in rational homotopy theory.
+For example, in \cite{lawrence2014interval} R. Lawrence and D. Sullivan define an explicit $C_\infty$-coalgebra structure on the chains of the interval.
+In \cite{buijs2020liemodels} this was extended nonconstructively to the chains on all simplices.
+We expect to provide explicit descriptions of these and other fundamental $C_\infty$-coalgebras using these and other techniques.
+These opens the possibility of using Massey products as finer invariants in applied topology, analogously to how Steenrod squares have been incorporated to it by my work.
